@@ -1,0 +1,28 @@
+
+<div class="row">
+    <div *ngFor="let item of itemList" class="card mt-3 mb-3 border-success" style="max-width: 100%;">
+        <div class="row g-0">
+          <div class="col-md-2">
+            <img [src]="item.images | noimage" class="img-fluid rounded-start mt-2" alt="...">
+            <div class="d-grid gap-2 col mx-auto mt-2 mb-2">
+              <a href="#" class="btn custom-green btn-outline-success">Ver artista</a>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{item.name}}</h5>
+              <p class="card-text">
+                <span *ngFor="let artist of item.artists" class="badge bg-dark">{{artist.name}}</span>
+              </p>
+              <p class="card-text"><small class="text-muted">{{item.type}}</small></p>
+              
+              <p class="card-text"><small class="text-muted">{{item.followers.total | number}} Seguidores</small></p>
+              <p class="card-text">
+                <span *ngFor="let gener of item.genres" class="badge bg-success">{{gener}}</span>
+              </p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

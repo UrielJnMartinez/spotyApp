@@ -1,0 +1,12 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Buscando...</h2>
+        <input #term type="text" (keyup)="searchAlbum(term.value)" class="form-control" placeholder="Buscar artista">
+    </div>
+    <div class="col-md-12 ">
+        <app-loading *ngIf="loading" class="d-flex justify-content-center mt-5"></app-loading>
+        
+        <app-card-list *ngIf="!loading" [itemList]="artistList"></app-card-list>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="row">
+
+
+  <div  *ngFor="let item of itemsList" class="col-4">
+      <div  class="card mt-3 mb-3" style="width: 18rem;">
+          <img [src]="item.images | noimage" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text"><small class="text-muted">{{item.release_date | date}}</small></p>
+            <p class="card-text">
+              <span (click)="getArtistById(artist.id)" *ngFor="let artist of item.artists" class="badge bg-dark puntero" alt="ver Artista">{{artist.name}}</span>
+            </p>
+            <div class="d-grid gap-2 col mx-auto">
+                <a (click)="getAlbumById(item.id)" class="btn custom-green btn-outline-success puntero" >Ver album</a>
+              
+            </div>
+          </div>
+      </div>
+  </div>
+</div>

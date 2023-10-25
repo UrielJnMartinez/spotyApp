@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+
+            <div class="card mb-3">
+               <div class="overflow-hidden" style="height: 18rem; width: 100%;">
+
+                   <img [src]="artistDetail.images | noimage" class="img-fluid " style="width: 100%;" alt="...">
+               </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{artistDetail.name}}</h5>
+                  <p class="card-text"><span  *ngFor="let genere of artistDetail.generes" class="badge bg-dark puntero" alt="ver Artista">{{genere}}</span></p>
+                  <p class="card-text"><small class="text-muted">{{artistDetail.followers.total | number}} de seguidores</small></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+            <h3>Mas escuchadas</h3>
+
+           
+            <app-song [songsList]="topTracks"></app-song>
+            <app-card-grid [itemsList]="albumsList" class="col"></app-card-grid>
+        </div>
+    </div>
+</div>   
